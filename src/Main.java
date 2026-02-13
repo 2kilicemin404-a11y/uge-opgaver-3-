@@ -31,36 +31,59 @@
 
 
         // opgave 2 Karakter - beregner
-int assignmentPoints = 0;
-
-int examPoints = 0;
-
-int projectPoints = 0;
-
-
-
+//int assignmentPoints = 0;
+//
+//int examPoints = 0;
+//
+//int projectPoints = 0;
+//
+//
+//
+//
+//void main(){
+//addAssignmentsPoints(25);
+//addExamPoints(40);
+//addProjectPoints(30);
+//printTotal();
+//}
+//
+//void addAssignmentsPoints(int points) {
+// assignmentPoints = assignmentPoints + points;
+//}
+//
+//void addExamPoints(int points){
+// examPoints = examPoints + points;
+//}
+//
+//void addProjectPoints(int points){
+//    projectPoints = projectPoints + points;
+//}
+//
+//void printTotal(){
+// int total = projectPoints + examPoints + assignmentPoints;
+// System.out.println("score: " + total);
+//}
 
 void main(){
-addAssignmentsPoints(25);
-addExamPoints(40);
-addProjectPoints(30);
-printTotal();
+ double finalPrice = calculateFinalPrice(500, 20);
+    System.out.println("pris:" + finalPrice + "DKK");
+
 }
 
-void addAssignmentsPoints(int points) {
- assignmentPoints = assignmentPoints + points;
+double applyDiscount(double price, double discountPercent){
+return price * (1 -discountPercent/100);
+
 }
 
-void addExamPoints(int points){
- examPoints = examPoints + points;
+double addTax(double price){
+return price * 1.25;
+
 }
 
-void addProjectPoints(int points){
-    projectPoints = projectPoints + points;
-}
 
-void printTotal(){
- int total = projectPoints + examPoints + assignmentPoints;
- System.out.println("score: " + total);
+double calculateFinalPrice(double basePrice, double discount){
+    double priceDiscounted= applyDiscount(basePrice, discount);
+    double finalPrice = addTax(priceDiscounted);
+    return finalPrice;
 
 }
